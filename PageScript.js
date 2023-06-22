@@ -80,20 +80,24 @@ function showFirstQuestion(){
 	center.append(question);
 	let questionForm = document.createElement("form");
 	questionForm.id = "questionForm";
+
 	questionForm.onsubmit = function(){
 		analizeAnswer();
 		showQuestion(2);
 		return false;
 		
 	};
+
 	center.append(questionForm);
 	currentVariants = ["2006", "2007", "2008", "2009"];
+
 	for (let i = 0; i < 4; i++){
 			let variant = document.createElement("input");
 			variant.type = "radio";
 			variant.value = currentVariants[i];
 			variant.form = questionForm;
 			variant.id = String(i+1);
+
 			variant.onclick = function(){
 				for (j = 1; j < 5; j++){
 					let currentCheckbox = document.getElementById(String(j));
@@ -102,6 +106,7 @@ function showFirstQuestion(){
 					}
 				}
 			}
+
 			questionForm.append(variant);
 			let textNextToCheckbox = document.createElement("span");
 			textNextToCheckbox.innerHTML = currentVariants[i];
@@ -113,12 +118,13 @@ function showFirstQuestion(){
 	let submitButton = document.createElement("input");
 	submitButton.type = "submit";
 	submitButton.id = "submitButton";
+	submitButton.value = "Следующий вопрос";
 	submitButton.form = questionForm;
 	questionForm.append(submitButton);
 }
 
 function analizeAnswer(){
-	answered = false;
+	let answered = false;
 	for (let i = 1; i < 5; i++){
 		let variant = document.getElementById(String(i));
 		if (variant.checked) {
@@ -144,9 +150,13 @@ function showQuestion(questionNumber){
 	let questionForm = document.getElementById("questionForm");
 	questionForm.onsubmit = function(){
 		if (questionNumber < 10){
+			if (questionNumber == 9) {
+				let submitButton = document.querySelector("input[type='submit']");
+				submitButton.value = "К результатам";
+			}
 			analizeAnswer();
 			showQuestion(questionNumber + 1);
-		}else{
+		} else {
 			analizeAnswer();
 			showResults();
 		}

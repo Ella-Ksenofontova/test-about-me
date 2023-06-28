@@ -4,7 +4,7 @@ let questions = ["2. В каком классе я учусь?",
  "4. Что из этого - моё хобби?",
  "5. Кем я планирую стать?", 
  "6. Какое из этих блюд я люблю?",
- "7. Какие экзамены на выбор я сдаю?",
+ "7. Какие экзамены на выбор я сдавала в 9 классе?",
  "8. Какая из этих песен мне особенно нравится?", 
  "9. На каких языках я пишу чаще всего?", 
  "10. В какую из этих игр я играла?"
@@ -30,8 +30,7 @@ let rightAnswers = ["2007",
 "JavaScript и Python", 
 "Minecraft"];
 
-function OpenInputName() {	
-
+function OpenInputName() {
 	let start_button = document.getElementById("start");
 	let title = document.getElementById("firstTitle");
 	
@@ -39,25 +38,29 @@ function OpenInputName() {
 			let typeNameTitle = document.createElement("h1");
 			typeNameTitle.innerHTML = "Введите ваше имя"
 			typeNameTitle.id = "secondTitle"
+
 			let formForInput = document.createElement("form");
 			formForInput.onsubmit = function(){
 				window.userName = inputName.value;
 				typeNameTitle.remove();
 				formForInput.remove();
-				explanation.remove();
 				showFirstQuestion();
 				return false;
 			};
-
 			formForInput.autocomplete = "off";
+
 			let inputName = document.createElement("input");
 			inputName.type = "text";
 			inputName.id = "inputName";
+
+			let inputButton = document.createElement("input");
+			inputButton.type = "submit";
+			inputButton.value = "Продолжить";
+
 			let paragraph = document.createElement("p");
 			paragraph.id = "p";
+
 			let center = document.getElementById("center");
-			let explanation = document.createElement("h2");
-			explanation.innerHTML = "<i>Нажмите Enter, когда закончите ввод</i>";
 			
 			title.remove();
 			start_button.remove();
@@ -66,8 +69,8 @@ function OpenInputName() {
 			center.append(paragraph);
 			center.append(formForInput);
 			formForInput.append(inputName);
-			center.append(paragraph);
-			center.append(explanation);
+			formForInput.append(paragraph);
+			formForInput.append(inputButton);
 		}
 }
 
@@ -97,15 +100,6 @@ function showFirstQuestion(){
 			variant.value = currentVariants[i];
 			variant.form = questionForm;
 			variant.id = String(i+1);
-
-			variant.onclick = function(){
-				for (j = 1; j < 5; j++){
-					let currentCheckbox = document.getElementById(String(j));
-					if(String(j) != variant.id && currentCheckbox.checked){
-						currentCheckbox.checked = 0;
-					}
-				}
-			}
 
 			questionForm.append(variant);
 			let textNextToCheckbox = document.createElement("span");

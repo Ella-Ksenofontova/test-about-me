@@ -1,0 +1,17 @@
+body{
+	font-family: calibri;
+	background-color: #87CEEB
+}
+h1, h2{  
+	font-weight: bold;
+	color:white
+}
+button, input[type='submit']{
+	background-color: #0099FF;
+ 	color: white;
+	border-color: transparent
+}
+
+div#center{
+	text-align: center;
+}

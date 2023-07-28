@@ -1,6 +1,7 @@
 body{
 	font-family: calibri;
-	background-color: #87CEEB
+	background-color: #87CEEB;
+	font-size: 1rem
 }
 h1, h2{  
 	font-weight: bold;

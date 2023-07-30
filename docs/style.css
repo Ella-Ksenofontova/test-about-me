@@ -8,9 +8,16 @@ h1, h2 {
 	color:white
 }
 button, input[type='submit'] {
+	border-radius: 10px;
 	background-color: #0099FF;
  	color: white;
-	border-color: transparent
+	border-color: #0677c2
+}
+
+button:hover, 
+input[type='submit']:hover {
+	background-color: #0677c2;
+	border-color: #0765a3
 }
 
 div#center {

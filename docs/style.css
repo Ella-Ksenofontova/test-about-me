@@ -10,7 +10,7 @@ h1, h2 {
 	color:white
 }
 button, input[type='submit'] {
-	width: 100px;
+	width: 150px;
 	
 	border-radius: 10px;
 	background-color: #0099FF;

@@ -100,6 +100,7 @@ function showFirstQuestion(){
 			variant.value = currentVariants[i];
 			variant.form = questionForm;
 			variant.id = String(i+1);
+			variant.name = "question";
 
 			questionForm.append(variant);
 			let textNextToCheckbox = document.createElement("label");

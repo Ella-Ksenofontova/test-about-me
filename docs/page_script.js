@@ -40,7 +40,7 @@ function OpenInputName() {
 			typeNameTitle.id = "secondTitle"
 
 			let formForInput = document.createElement("form");
-			formForInput.onsubmit = function(){
+			formForInput.onsubmit = function() {
 				window.userName = inputName.value;
 				typeNameTitle.remove();
 				formForInput.remove();
@@ -102,8 +102,9 @@ function showFirstQuestion(){
 			variant.id = String(i+1);
 
 			questionForm.append(variant);
-			let textNextToCheckbox = document.createElement("span");
-			textNextToCheckbox.innerHTML = `<label for=${variant.id}>${currentVariants[i]}</label>`;
+			let textNextToCheckbox = document.createElement("label");
+			textNextToCheckbox.htmlFor = variant.id;
+			textNextToCheckbox.innerHTML = currentVariants[i];
 			textNextToCheckbox.id = "text " + String(i+1)
 			questionForm.append(textNextToCheckbox);
 			let paragraph = document.createElement("p");
@@ -138,7 +139,7 @@ function showQuestion(questionNumber){
 		variant.value = currentVariants[i-1];
 		if (variant.checked) variant.checked = 0;
 		let textOfVariant = document.getElementById("text " + String(i));
-		textOfVariant.innerHTML = `<label for=${variant.id}>${currentVariants[i]}</label>`;
+		textOfVariant.innerHTML = currentVariants[i-1];
 	}
 
 	let questionForm = document.getElementById("questionForm");

@@ -20,7 +20,7 @@ let variants = [["8", "9", "10", "11"],
 ["Mass Effect", "Fallout 3", "Fortnite", "Minecraft"]
 ];
 let rightAnswers = ["2007", 
-"9",
+"10",
 "Рысь", 
 "Рисование",
 "Программистом",
@@ -103,7 +103,7 @@ function showFirstQuestion(){
 
 			questionForm.append(variant);
 			let textNextToCheckbox = document.createElement("span");
-			textNextToCheckbox.innerHTML = currentVariants[i];
+			textNextToCheckbox.innerHTML = `<label for=${variant.id}>${currentVariants[i]}</label>`;
 			textNextToCheckbox.id = "text " + String(i+1)
 			questionForm.append(textNextToCheckbox);
 			let paragraph = document.createElement("p");
@@ -138,7 +138,7 @@ function showQuestion(questionNumber){
 		variant.value = currentVariants[i-1];
 		if (variant.checked) variant.checked = 0;
 		let textOfVariant = document.getElementById("text " + String(i));
-		textOfVariant.innerHTML = currentVariants[i-1];
+		textOfVariant.innerHTML = `<label for=${variant.id}>${currentVariants[i]}</label>`;
 	}
 
 	let questionForm = document.getElementById("questionForm");

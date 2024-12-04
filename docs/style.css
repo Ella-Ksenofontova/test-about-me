@@ -1,0 +1,31 @@
+body {
+	font-family: sans-serif;
+	background-color: #87CEEB;
+	font-size: 16px;
+
+	text-shadow: 1px 1px 1px gray
+}
+h1, h2 {  
+	font-weight: bold;
+	color:white
+}
+button, input[type='submit'] {
+	width: 150px;
+	
+	border-radius: 10px;
+	background-color: #0099FF;
+ 	color: white;
+	border-color: #0677c2;
+
+	font-weight: bold
+}
+
+button:hover, 
+input[type='submit']:hover {
+	background-color: #0677c2;
+	border-color: #0765a3
+}
+
+div#center {
+	text-align: center;
+}

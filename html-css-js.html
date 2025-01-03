@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тест по основам HTML, CSS, JS</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Ubuntu+Condensed&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <h1><a href="./index.html">Викторины</a></h1>
+  </header>
+  <main>
+    <div class="quiz-wrapper" id="web-dev">
+      <div class="title-and-button">
+        <h2 class="quiz-title">Тест по основам HTML, CSS, JS</h2>
+        <p>Насколько хорошо вы знаете языки, необходимые для создания сайта?</p>
+        <button class="quiz-start" href="./html-css-js.html">Начать!</button>
+      </div>
+      <div class="quiz-image"><img src="./webdev.jpg" alt="Женщина занимается веб-разработкой, мультяшный стиль">
+        <a href="https://www.vecteezy.com/members/hoangpts">Источник изображения</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const answers = [];
+    const questions = [
+      "1. Какое CSS-свойство используется для задания цвета шрифта?",
+      "2. Какой атрибут используется для задания ширины картинки?",
+      "3. Какую функцию нужно использовать, чтобы отложить выполнение какого-либо кода на некоторое время?",
+      "4. Внутри какого тега должен находиться тег <em>title</em>, отвечающий за название сайта?",
+      "5. Как в современном JavaScript объявляют <em>изменяемую</em> переменную?",
+      "6. Какое значение нужно задать свойству display, чтобы элемент стал невидимым и был убран из потока документа?",
+      "7. При помощи какой функции можно добавить обработчик события?",
+      "8. Какое CSS-свойство позволяет определить поведение элемента в случае, если его содержимое больше самого элемента?",
+      "9. Чем отличается тег <em>span</em> от тега <em>div</em>?",
+      "10. Какой тег позволяет создать маркированный (ненумерованный) список?",
+      "11. Что означает знак + в CSS?",
+      "12. Как расшифровывается аббревиатура DOM?"
+    ];
+    const options = [
+      ["text-color", "color", "font-color"],
+      ["width", "x-dimension", "size", "z-index"],
+      ["delay()", "Time.sleep()", "setTmeout()"],
+      ["header", "head", "body", "h1"],
+      ["var", "const", "let"],
+      ["hidden", "flex", "block", "none"],
+      ["addEventListener()", "append_event_handler()", "Зависит от названия события", "Это невозможно"],
+      ["control-flow", "overflow-behaviour", "overflow", "auto-flow"],
+      ["Тег <em>span</em> - строчный, а тег <em>div</em> - блочный", "Ничем, это синонимы", "Тег <em>span</em> - блочный, а тег <em>div</em> - строчный", "Тег <em>div</em> относится к устаревшим, вместо него нужно использовать <em>span</em>"],
+      ["ul", "li", "ol", "p"],
+      ["Два соседних элемента", "Родительский и дочерний элемент", "Наличие/отсутствие какого-либо значения", "Используется как разделитель для длинной строки"],
+      ["Diagram Oldest Maker", "Document Object Model", "Dynamic Overflow Modulator"]
+    ];
+    const rightAnswers = ["color",
+      "width",
+      "setTmeout()",
+      "head",
+      "let",
+      "none",
+      "addEventListener()",
+      "overflow",
+      "Тег <em>span</em> - строчный, а тег <em>div</em> - блочный",
+      "ul",
+      "Два соседних элемента",
+      "Document Object Model"];
+
+      const resultMessage = "знает основы веб-разработки";
+  </script>
+  <script src="./quiz.js"></script>
+</body>
+
+</html>
